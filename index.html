@@ -1,192 +1,220 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Henry Meal Diary</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f8;
-            color: #333;
-        }
-        #clock-contain{
-         display: flex; 
-         justify-content: center; 
-         align-items: center; 
-         height:10vh;
-        }
-        #clock{
-        font-family: Verdana, Geneva, Tahoma, sans-serif; 
-        font-size:2rem; 
-        font-weight: bold; 
-        color:white; 
-        backdrop-filter:blur (50px);
-        background-color:green;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f8;
+        color: #333;
+      }
+      #clock-contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+      }
+      #clock {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        backdrop-filter: blur (50px);
+        background-color: green;
+      }
 
-        header {
-            background: #2ecc71;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+      header {
+        background: #2ecc71;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            background: #27ae60;
-            padding: 10px;
-        }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        background: #27ae60;
+        padding: 10px;
+      }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+      section {
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
 
-        h2 {
-            color: #27ae60;
-        }
+      h2 {
+        color: #27ae60;
+      }
 
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+      .card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        input, select, button {
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-        }
+      input,
+      select,
+      button {
+        padding: 10px;
+        margin: 5px 0;
+        width: 100%;
+      }
 
-        button {
-            background: #2ecc71;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+      button {
+        background: #2ecc71;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
 
-        button:hover {
-            background: #27ae60;
-        }
+      button:hover {
+        background: #27ae60;
+      }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
-        li {
-            background: #ecf0f1;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+      li {
+        background: #ecf0f1;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+      }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #27ae60;
-            color: white;
-            margin-top: 30px;
-        }
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #27ae60;
+        color: white;
+        margin-top: 30px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <h1>🍽️ Henry Meal Diary</h1>
+      <p>Plan, Save & Enjoy Your Meals</p>
+      <p>We care for you</p>
+    </header>
+    <div id="clock-contain">
+      <div id="clock">00:00:00</div>
+    </div>
 
-<header>
-    <h1>🍽️ Henry Meal Diary</h1>
-    <p>Plan, Save & Enjoy Your Meals</p>
-    <p>We care for you</p>
-</header>
-<div id="clock-contain">
-  <div id="clock">00:00:00</div>  
-</div>
+    <nav>
+      <a href="#login">Login</a>
+      <a href="#planner">Meal Planner</a>
+      <a href="#countries">Country Foods</a>
+    </nav>
 
-<nav>
-    <a href="#login">Login</a>
-    <a href="#planner">Meal Planner</a>
-    <a href="#countries">Country Foods</a>
-</nav>
-
-<section id="login">
-    <div class="card">
+    <section id="login">
+      <div class="card">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Enter your name">
+        <input type="text" id="username" placeholder="Enter your name" />
         <button onclick="login()">Login</button>
         <p id="welcome"></p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="planner">
-    <div class="card">
+    <section id="planner">
+      <div class="card">
         <h2>Meal Planner</h2>
 
         <select id="day">
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
         </select>
 
-        <input type="text" id="meal" placeholder="Enter meal (e.g. Jollof Rice)">
-        <button onclick="addMeal()">Add Meal</button><br>
+        <input
+          type="text"
+          id="meal"
+          placeholder="Enter meal (e.g. Jollof Rice)"
+        />
+        <button onclick="addMeal()">Add Meal</button><br />
         <h3>Your Planned Meals</h3>
         <ul id="mealList"></ul>
-    </div>
-    <button onclick="clearMeals()">Clear All Meals</button>
-</section>
+      </div>
+      <button onclick="clearMeals()">Clear All Meals</button>
+    </section>
 
-<section id="countries">
-    <div class="card">
-        <h2>Popular Foods by Country</h2><br>  
+    <section id="countries">
+      <div class="card">
+        <h2>Popular Foods by Country</h2>
+        <br />
         <ul>
-            <li><strong>Nigeria:</strong> Jollof Rice, Egusi Soup,ogbono soup</li>
-            <li><strong>Italy:</strong> Pizza, Pasta</li>
-            <li><strong>India:</strong> Curry, Biryani</li>
-            <li><strong>Mexico:</strong> Tacos, Burritos</li>
-            <li><strong>China:</strong> Fried Rice, Noodles</li>
+          <li><strong>Nigeria:</strong> Jollof Rice, Egusi Soup,ogbono soup</li>
+          <li><strong>Italy:</strong> Pizza, Pasta</li>
+          <li><strong>India:</strong> Curry, Biryani</li>
+          <li><strong>Mexico:</strong> Tacos, Burritos</li>
+          <li><strong>China:</strong> Fried Rice, Noodles</li>
+          <li><strong>Ghana:</strong> fufu, light soup, jellof rice</li>
+          <li><strong>South Africa:</strong> Braai(BBQ), Bunny Chow</li>
+           <li><strong>Kenya:</strong> Ugali,Nyama Choma</li>
+          <li><strong>Ethiopia:</strong> injera with Doro Wat</li>
+           <li><strong>United Kingdom:</strong> fish,chips ,sausages</li> 
+          <li><strong>Spain:</strong> paella,</li> 
+           <li><strong>France:</strong> Croissants, Coq au Vin</li>
+            <li><strong>Germany:</strong> sausages (Bratwurst), Pretzels</li> 
+            <li><strong>Japan:</strong> Sushi,Ramen</li>
+             <li><strong>India:</strong> Curry, Biryani</li>
+             <li><strong>Thailand:</strong> pad, Thai, Noodles</li> 
+            <li><strong>South Korea:</strong> Kimchi, Bibimbap</li>
+             <li><strong>United State:</strong> Burgers, Fried Chicken</li>
+             <li><strong>Mexico:</strong> Tacos, Burritos</li>
+ <li><strong>Canada:</strong>poutine, </li>
+ <li><strong>Brazil:</strong> feijoada, Noodles</li>
+ <li><strong>Argentina:</strong> Asado (Grilled Meat)</li>
+ <li><strong>Peru:</strong> Ceviche</li>
+ <li><strong>Saudi Arabia:</strong> Kebab</li>
+  <li><strong>Lebanon:</strong> Hummus,Shawarma</li>
+   <li><strong>Turkey:</strong> Kebab, Noodles</li>
+    <li><strong>Australia:</strong> Meat pie, BBQ, ice cream</li>
+   <li><strong>New Zealand:</strong> Hangi,</li>
+      <li><strong>Liberia:</strong> peanut soup, Dumboy,palava sauce,jellof Rice</li>
         </ul>
-    </div>
+      </div>
+    </section>
 
-</section>
+    <footer>
+      <p>© Henrygabrieltech 2026</p>
+      <p>made in Nigeria</p>
+    </footer>
 
-<footer>
-    <p>© Henrygabrieltech 2026</p>
-    <p>made in Nigeria</p>
-</footer>
+    <script>
+      let meals = JSON.parse(localStorage.getItem("meals")) || [];
 
-<script>
-    let meals = JSON.parse(localStorage.getItem("meals")) || [];
-
-    function login() {
+      function login() {
         const username = document.getElementById("username").value;
         if (username) {
-            document.getElementById("welcome").innerText =
-                "Welcome, " + username + "! Start planning your meals 🍲";
+          document.getElementById("welcome").innerText =
+            "Welcome, " + username + "! Start planning your meals 🍲";
         }
-    }
+      }
 
-    function addMeal() {
+      function addMeal() {
         const day = document.getElementById("day").value;
         const meal = document.getElementById("meal").value;
 
@@ -197,52 +225,41 @@
 
         document.getElementById("meal").value = "";
         displayMeals();
-    }
-    // CLEAR ALL MEALS (ADMIN)
-    function clearMeals() {
+      }
+      // CLEAR ALL MEALS (ADMIN)
+      function clearMeals() {
         if (confirm("Are you sure you want to delete all meals?")) {
-            meals = [];
-            localStorage.removeItem("meals");
-            displayMeals();
+          meals = [];
+          localStorage.removeItem("meals");
+          displayMeals();
         }
-    }
+      }
 
-    displayMeals();
+      displayMeals();
 
-    function displayMeals() {
+      function displayMeals() {
         const list = document.getElementById("mealList");
         list.innerHTML = "";
 
         meals.forEach((item, index) => {
-            const li = document.createElement("li");
-            li.innerText = item.day + " - " + item.meal;
-            list.appendChild(li);
+          const li = document.createElement("li");
+          li.innerText = item.day + " - " + item.meal;
+          list.appendChild(li);
         });
-    }
+      }
 
-    displayMeals();
+      displayMeals();
 
-function updateClock(){
-const now=  new Date();
-const hours= now.getHours().toString ().padStart (2,0);
-const minutes = now.getMinutes ().toString().padStart(2,0);
-const seconds = now.getSeconds ().toString().padStart(2,0);
-const timeString=`${hours}:${minutes}:${seconds}`;
-document.getElementById("clock").textContent=timeString;
-}
-updateClock();
-setInterval (updateClock,1000);
-
-
-
-
-
-
-
-
-
-
-</script>
-
-</body>
+      function updateClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, 0);
+        const minutes = now.getMinutes().toString().padStart(2, 0);
+        const seconds = now.getSeconds().toString().padStart(2, 0);
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        document.getElementById("clock").textContent = timeString;
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
 </html>
